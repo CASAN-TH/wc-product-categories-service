@@ -129,16 +129,16 @@ describe('Productcategorie CRUD routes tests', function () {
                 }
                 var resp = res.body;
                 var update = {
-                    name: "Clothing",
-                    slug: "clothing",
-                    parent: 0,
-                    description: "",
-                    display: "default",
+                    name: "Clothing1",
+                    slug: "clothing1",
+                    parent: 1,
+                    description: "lex",
+                    display: "products",
                     image: {
                         src: "http://demo.woothemes.com/woocommerce/wp-content/uploads/sites/56/2013/06/T_2_front.jpg"
                     },
-                    menu_order: 0,
-                    count: 36,
+                    menu_order: 1,
+                    count: 37,
                 }
                 request(app)
                     .put('/api/productcategories/' + resp.data._id)
@@ -150,6 +150,7 @@ describe('Productcategorie CRUD routes tests', function () {
                             return done(err);
                         }
                         var resp = res.body;
+                        console.log(resp);
                         // assert.equal(resp.data.name, update.name);
                         assert.equal(resp.data.name, update.name);
                         assert.equal(resp.data.slug, update.slug);
