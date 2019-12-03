@@ -27,7 +27,17 @@ var ProductcategorieSchema = new Schema({
         default: "default"
     },
     image: {
-        type: Object,
+        type: {
+            src: {
+                type: String,
+            },
+            name: {
+                type: String,
+            },
+            alt: {
+                type: String,
+            }
+        }
     },
     menu_order: {
         type: Number,
